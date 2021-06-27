@@ -12,7 +12,8 @@ select a.street, a.city, a.state, a.zipcode, o.id as "order ID"
 from orders as o
 join customers as c on c.id = o.customer_id
 join addresses as a on a.id = c.address_id
-where o.date_placed < '2021-01-01';
+where o.date_placed < '2021-01-01'
+and o.date_placed > '2019-12-31';
 
 --   3. Retrieve all product details for products that are under the "Kitchen" category
 select * from products
