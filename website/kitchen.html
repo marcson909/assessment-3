@@ -10,23 +10,23 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
 
-    <script href="app.js"></script>
+    <script src="app.js" defer></script>
     <title>Shopper</title>
   </head>
   <body>
     <div class="container">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Shopper</a>
+        <a class="navbar-brand" href="index.html">Shopper</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html" target="_self">Home</a>
+              <a class="nav-link" aria-current="page" href="index.html" target="_self">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="kitchen.html" target="_self">Kitchen</a>
+              <a class="nav-link active" href="kitchen.html" target="_self">Kitchen</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="electronics.html" target="_self">Electronics</a>
@@ -41,10 +41,12 @@
       </div>
       <div id="cart_container" class="navbar-nav">
         <li class="nav-item nav-linkd-flex justify-content-end"></li>
-        <a class="nav-link btn text-white px-3" href="cart.html" target="_self">
+        <a class="nav-link btn text-white px-3 position-relative" href="cart.html" target="_self">
           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
             <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
-          </svg>        
+          </svg>
+          <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-primary cart-count">
+          </span>        
         </a>
         </li>
       </div>
@@ -56,49 +58,53 @@
     <div class="row row-cols-4 px-5 py-3">
       <div class="col">
         <div class="card h-100">
-          <img src="https://st.hzcdn.com/simgs/pictures/kitchens/kitchens-michael-alan-kaskel-img~0d511d8e0e77ab3a_14-3280-1-7aacee2.jpg" class="card-img-top" alt="kitchen">
+          <img id="product-image" src="https://media.istockphoto.com/photos/stationary-blender-with-fruit-picture-id1129094837?" class="card-img-top" alt=" blender">
           <div class="card-body">
-            <h5 class="card-title">Kitchen</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <h5 class="card-title text-center">Ninja Professional Blender</h5>
+            <h6 class="text-center price">$240</h6>
+            <p class="card-text">The Ninja Performance Blender features a sleek design for your countertop and outstanding performance with 1000 watts of professional power.</p>
           </div>
           <div class="d-flex justify-content-center">
-            <a href="#" class="btn btn-primary ">Shop</a>
+            <a href="#" class="btn btn-primary add-button">Add to Cart</a>
           </div>
         </div>
       </div>
       <div class="col">
         <div class="card h-100">
-          <img src="https://www.ballytechelectronics.co.ke/wp-content/uploads/2016/03/electronics-company.jpg" class="card-img-top" alt="Electronics">
+          <img id="product-image" src="https://image.shutterstock.com/image-illustration/red-kitchen-stand-food-mixer-600w-682583458.jpg" class="card-img-top" alt="kitchen mixer">
           <div class="card-body">
-            <h5 class="card-title">Electronics</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <h5 class="card-title text-center">KitchenAid Mixer</h5>
+            <h6 class="text-center price">$140</h6>
+            <p class="card-text">Make up to 8 dozen cookies in a single batch with the KitchenAid® Deluxe 4.5 Quart Tilt-Head Stand Mixer.</p>
           </div>
           <div class="d-flex justify-content-center">
-            <a href="#" class="btn btn-primary ">Shop</a>
+            <a href="#" class="btn btn-primary add-button">Add to Cart</a>
           </div>
         </div>
       </div>
       <div class="col">
         <div class="card h-100">
-          <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/amazon-rivet-furniture-1533048038.jpg" class="card-img-top" alt="Furniture">
+          <img id="product-image" src="https://image.shutterstock.com/image-vector/set-fork-knife-spoon-isolated-600w-485001967.jpg" class="card-img-top" alt="utensils">
           <div class="card-body">
-            <h5 class="card-title">Furniture</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+            <h5 class="card-title text-center">Utensil set</h5>
+            <h6 class="text-center price">$10</h6>
+            <p class="card-text">The Mainstays Swirl Dinner Forks fit in well with any kitchen decor whether you are starting a utensil set from scratch or adding it as a supplement to your existing flatware. </p>
           </div>
           <div class="d-flex justify-content-center">
-            <a href="#" class="btn btn-primary ">Shop</a>
+            <a href="#" class="btn btn-primary add-button">Add to Cart</a>
           </div>
         </div>
       </div>
       <div class="col">
         <div class="card h-100">
-          <img src="https://hips.hearstapps.com/housebeautiful.cdnds.net/17/14/1491562727-landscaped-back-yard-patio-flower-garden-with-natural-paving-stones.jpg" class="card-img-top" alt="Patio">
+          <img id="product-image" src="https://image.shutterstock.com/image-photo/modern-toaster-on-white-background-600w-1283878051.jpg" class="card-img-top" alt="toaster">
           <div class="card-body">
-            <h5 class="card-title">Patio</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <h5 class="card-title text-center">KitchenAid Toaster</h5>
+            <h6 class="text-center price">$40</h6>
+            <p class="card-text">Easy to use, every day, 2 slices at a time. Toast bread, bagels and more just the way you like it. This toaster also features a defrost setting to toast frozen breads in under a minute.</p>
           </div>
           <div class="d-flex justify-content-center">
-            <a href="#" class="btn btn-primary ">Shop</a>
+            <a href="#" class="btn btn-primary add-button">Add to Cart</a>
           </div>
         </div>
       </div>
