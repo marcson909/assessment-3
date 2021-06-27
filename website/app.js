@@ -1,6 +1,7 @@
  let nextCartId = 0
  let cartList = []
  const cartListKey = "cart"
+ let cartTotal = 0
 
 function initializeData() {
   let stringData = localStorage.getItem(cartListKey)
@@ -13,7 +14,14 @@ function initializeData() {
     // add each task name to an unordered list on the page
     for (let i = 0; i < cartList.length; i++) {
       addItemToCart(cartList[i][0],cartList[i][1])
+      
+      let price = cartList[i][1];
+      trimmedPrice = price.replace("$", "");
+
+      cartTotal += +trimmedPrice;
+      
     }
+    updateTotal(+cartTotal);
   }
 }
 
@@ -65,20 +73,23 @@ function addItemToCart(itemName,itemCost) {
   let newCartItem = document.createElement("a")
   newCartItem.id = "list-group-item-" + nextCartId
   nextCartId += 1
-  newCartItem.className = "list-group-item list-group-item-action p-2 bd-highlight"
+  newCartItem.className = "list-group-item list-group-item-action p-2 bd-highlight postition-relative fw-bold"
 
   let newCartItemCost = document.createElement("p")
-  newCartItemCost.className = "list-group-item-action"
+  newCartItemCost.className = "list-group-item-action fw-normal"
 
   let deleteButtonSpan = document.createElement('span');
-      deleteButtonSpan.setAttribute('class', '')
+      deleteButtonSpan.setAttribute('class', 'position-absolute top-50 end-0 translate-middle-y')
+
   let deleteCartItemButton = document.createElement('button');
 
   deleteCartItemButton.setAttribute('id', `delete-${nextCartId}`);
 
   deleteCartItemButton.setAttribute('type', 'button')
-  deleteCartItemButton.setAttribute('class', 'btn btn-outline-danger btn-block mt-2')
-  deleteCartItemButton.setAttribute('style', 'margin-left: 5px')
+  deleteCartItemButton.setAttribute('class', 'btn btn-danger btn-block')
+  deleteCartItemButton.innerHTML = "Remove";
+
+  deleteCartItemButton.setAttribute('style', 'margin: 5px')
 
   deleteCartItemButton.addEventListener("click", deleteItem)
 
@@ -100,18 +111,26 @@ function deleteItem(e) {
   let cartItem = e.target.parentNode.parentNode.parentNode;
   if (!cartItem)
     return
-  console.log(cartItem);
+
   let id = e.target.parentNode.parentNode.id;
   newID = id.replace("list-group-item-", "");
-  console.log(id)
+
   cartItem.remove();
 
-  console.log(newID);
+
   cartList.splice(newID, 1);
   stringData = JSON.stringify(cartList)
   localStorage.setItem('cart', stringData);
   location.reload();
 
+}
+
+function updateTotal(int){
+  totalCost = document.getElementById('cart-total');
+  if(totalCost){
+  totalCost.innerHTML = "Total: $" + int;
+  }
+  else return
 }
 
 initializeData();
