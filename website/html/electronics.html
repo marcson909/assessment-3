@@ -1,4 +1,3 @@
-<!--Hello World-->
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,15 +7,15 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="app.js" defer></script>
+    <script src="../js/app.js" defer></script>
     <title>Shopper</title>
   </head>
   <body>
-    <!-- navbar container -->
     <div class="container">
+      <!-- navbar  -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand px-2" href="index.html">Shopper</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,13 +24,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html" target="_self">Home</a>
+              <a class="nav-link" aria-current="page" href="index.html" target="_self">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="kitchen.html" target="_self">Kitchen</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="electronics.html" target="_self">Electronics</a>
+              <a class="nav-link active" href="electronics.html" target="_self">Electronics</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="furniture.html" target="_self">Furniture</a>
@@ -39,76 +38,81 @@
             <li class="nav-item">
               <a class="nav-link" href="patio.html" target="_self">Patio & Garden</a>
             </li>
-          </ul>
+          </ul>      
         </div>
-        <div id="cart_container" class="navbar-nav">
-          <li class="nav-item nav-linkd-flex justify-content-end">
+      <div id="cart_container" class="navbar-nav">
+        <li class="nav-item nav-linkd-flex justify-content-end">
           <a class="nav-link btn text-white px-3 position-relative" href="cart.html" target="_self">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
               <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
             </svg>
             <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-primary cart-count">
-            </span>      
+            </span>           
           </a>
-          </li>
-        </div>
+        </li>
+      </div>
       </nav>
     </div>
 
-    <!-- main content starts here -->
+        <!-- main content starts here -->
     <div>
-      <h1 class="text-center">Shop by category!</h1>
+      <h1 class="text-center">Electronics</h1>
     </div>
-    <!-- cards for each category -->
+    
+    <!-- card elements for each sale item -->
     <div class="row row-cols-4 px-5 py-3">
       <div class="col">
         <div class="card h-100">
-          <img src="https://st.hzcdn.com/simgs/pictures/kitchens/kitchens-michael-alan-kaskel-img~0d511d8e0e77ab3a_14-3280-1-7aacee2.jpg" class="card-img-top" alt="kitchen">
+          <img id="product-image" src="https://image.shutterstock.com/image-photo/tv-4k-flat-screen-lcd-600w-1100009690.jpg" class="card-img-top" alt="tv">
           <div class="card-body">
-            <h5 class="card-title text-center">Kitchen</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <h5 class="card-title text-center">Samsung 70" 4k TV</h5>
+            <h6 class="text-center price">$1099</h6>
+            <p class="card-text">The TU7000 Crystal UHD TV unlocks hidden detail at four times the quality of Full HD. Plus Universal Guide helps you find exactly what you want to watch, quickly and easily.</p>
           </div>
           <div class="d-flex justify-content-center">
-            <a href="kitchen.html" target="_self" class="btn btn-primary ">Shop</a>
+            <a href="#" class="btn btn-primary add-button">Add to Cart</a>
           </div>
         </div>
       </div>
 
       <div class="col">
         <div class="card h-100">
-          <img src="https://www.ballytechelectronics.co.ke/wp-content/uploads/2016/03/electronics-company.jpg" class="card-img-top" alt="Electronics">
+          <img id="product-image" src="https://image.shutterstock.com/image-photo/hands-holding-black-tablet-isolated-600w-1577816347.jpg" class="card-img-top" alt="iPad 9">
           <div class="card-body">
-            <h5 class="card-title text-center">Electronics</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <h5 class="card-title text-center">iPad 9</h5>
+            <h6 class="text-center price">$3500</h6>
+            <p class="card-text">With a stunning 10.9-inch Liquid Retina display and True Tone for a more comfortable viewing experience.</p>
           </div>
           <div class="d-flex justify-content-center">
-            <a href="electronics.html"  target="_self" class="btn btn-primary ">Shop</a>
+            <a href="#" class="btn btn-primary add-button">Add to Cart</a>
           </div>
         </div>
       </div>
 
       <div class="col">
         <div class="card h-100">
-          <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/amazon-rivet-furniture-1533048038.jpg" class="card-img-top" alt="Furniture">
+          <img id="product-image" src="https://image.shutterstock.com/image-photo/wireless-surround-headphones-red-black-600w-1913906683.jpg" class="card-img-top" alt="Bose Headphones">
           <div class="card-body">
-            <h5 class="card-title text-center">Furniture</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+            <h5 class="card-title text-center">Bose Headphones</h5>
+            <h6 class="text-center price">$399</h6>
+            <p class="card-text">Bose Headphones 700 deliver everything you expect from Bluetooth headphones and some things you never imagined possible.</p>
           </div>
           <div class="d-flex justify-content-center">
-            <a href="furniture.html" target="_self" class="btn btn-primary ">Shop</a>
+            <a href="#" class="btn btn-primary add-button">Add to Cart</a>
           </div>
         </div>
       </div>
 
       <div class="col">
         <div class="card h-100">
-          <img src="https://hips.hearstapps.com/housebeautiful.cdnds.net/17/14/1491562727-landscaped-back-yard-patio-flower-garden-with-natural-paving-stones.jpg" class="card-img-top" alt="Patio">
+          <img id="product-image" src="https://image.shutterstock.com/image-illustration/colorful-retro-arcade-game-machine-600w-488298673.jpg" class="card-img-top" alt="Arcade Machine">
           <div class="card-body">
-            <h5 class="card-title text-center">Patio</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <h5 class="card-title text-center">Arcade Machine</h5>
+            <h6 class="text-center price">$399</h6>
+            <p class="card-text">Bringing you authentic arcade experiences in a home arcade form factor.</p>
           </div>
           <div class="d-flex justify-content-center">
-            <a href="patio.html" class="btn btn-primary " target="_self">Shop</a>
+            <a href="#" class="btn btn-primary add-button">Add to Cart</a>
           </div>
         </div>
       </div>
